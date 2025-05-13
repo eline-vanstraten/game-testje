@@ -32,8 +32,13 @@ export class Shark extends Actor {
     hitSomething(event){
         if (event.other.owner instanceof Fish) {
             // Je kan `instanceof` gebruiken om te zien waar je tegenaan botst.
-            console.log('hit Fish')
+            // console.log('hit Fish')
             event.other.owner.kill()
+            // Resources.NomNom.play()
+
+            //game aanroepen
+            this.scene.engine.addScore()
+
             // event.other.owner.wasEatenByShark()
         }
     }

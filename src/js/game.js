@@ -1,5 +1,5 @@
 import '../css/style.css'
-import { Actor, Engine, Vector, DisplayMode } from "excalibur"
+import { Actor, Engine, Vector, DisplayMode, Label, Font, FontUnit, Color } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Shark } from './shark.js'
 import { Fish } from './fish.js'
@@ -42,8 +42,7 @@ export class Game extends Engine {
         // }
 
         for (let i = 0; i < 30; i++) {
-        
-
+    
             console.log("start de game!")
             // const bubble = new Actor()
             let bubble = new Bubble()
@@ -51,7 +50,27 @@ export class Game extends Engine {
             this.add(bubble)
         }
 
+        this.scoreLabel = new Label({
+            text: 'Score: 0',
+            pos: new Vector(100, 50),
+            font: new Font({
+                family: 'Arial',
+                size: 24,
+                unit: FontUnit.Px,
+                color: Color.White
+            })
+        })
+        this.add(this.scoreLabel)
+        // this.scoreLabel.text = `Score: 20`
+
     }
+
+    addScore(){
+        console.log("add a  point")
+        this.scoreLabel +=1
+        
+        this.scoreLabel.text = `${scoreLabel}`    
+}
 
 
 }
