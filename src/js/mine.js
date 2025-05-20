@@ -3,7 +3,7 @@ import { Resources } from './resources.js'
 
 export class Mine extends Actor {
     constructor(){
-        super()
+        super({width: Resources.Mine.width, height: Resources.Mine.height})
 
         this.graphics.use(Resources.Mine.toSprite())
         this.pos = new Vector(400, 450/2)

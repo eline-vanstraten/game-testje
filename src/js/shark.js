@@ -49,7 +49,7 @@ export class Shark extends Actor {
             // console.log(`${this.name} hits a fish`)
             // Je kan `instanceof` gebruiken om te zien waar je tegenaan botst.
             // console.log('hit Fish')
-            event.other.owner.kill()
+            // event.other.owner.kill()
             // Resources.NomNom.play()
 
             this.score++
@@ -57,7 +57,7 @@ export class Shark extends Actor {
             //game aanroepen
             this.scene.engine.ui.showScore(this.player, this.score)
 
-            // event.other.owner.wasEatenByShark()
+            event.other.owner.wasEatenByShark()
         }
     }
 
@@ -118,9 +118,11 @@ export class Shark extends Actor {
         if (event.other.owner instanceof Mine) {
 
             let fishes = this.scene.actors.filter(actor => actor instanceof Fish)
-            
-            for(fishes of this.currentScene.actors){
-                 event.other.owner.kill()
+            // console.log(`${fishes}`)
+            for (let fish of fishes) {
+                fish.wasEatenByShark()
+                
+                //  event.other.owner.kill()
             }
         }
     }

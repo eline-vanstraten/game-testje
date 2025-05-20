@@ -27,19 +27,19 @@ export class Fish extends Actor{
 
     }
 
-    // wasEatenByShark(){
-    //     console.log("I was eaten by shark")
-    //     let x = Math.random() * 1200
-    //     let y = Math.random() * 450
-    //     this.pos = new Vector(800 + x, y)
-    // }
-
-    onPostKill(){
-        // console.log("I was eaten by shark")
-        this.unkill()
+    wasEatenByShark(){
+        console.log("I was eaten by shark")
         let x = Math.random() * 1200
         let y = Math.random() * 450
         this.pos = new Vector(800 + x, y)
     }
+
+    // onPostKill(){
+    //     // console.log("I was eaten by shark")
+    //     this.unkill()
+    //     let x = Math.random() * 1200
+    //     let y = Math.random() * 450
+    //     this.pos = new Vector(800 + x, y)
+    // }
 }
 
