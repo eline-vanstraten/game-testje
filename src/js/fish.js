@@ -35,7 +35,7 @@ export class Fish extends Actor{
     // }
 
     onPostKill(){
-        console.log("I was eaten by shark")
+        // console.log("I was eaten by shark")
         this.unkill()
         let x = Math.random() * 1200
         let y = Math.random() * 450
